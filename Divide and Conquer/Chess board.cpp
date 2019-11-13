@@ -99,7 +99,7 @@ void Report(){
 		rep[i].x[1][0] <<","<<
 		rep[i].x[1][1] <<","<<
 		rep[i].x[2][0] <<","<<
-		rep[i].x[2][1] <<");"<< endl;
+		rep[i].x[2][1] <<")"<< endl;
 	}
 }
 
@@ -108,4 +108,5 @@ int main(){
 	cin >> X >> Y >> N;
 	chess_board(1, 1, X, Y, N);
 	Report();
+	return 0;
 }
