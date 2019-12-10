@@ -1,8 +1,14 @@
+#include <bits/stdc++.h>
+#define MAX_V 1000 + 1
+#define MAX_E 1000 + 1
+#define INF 1E9
+using namespace std;
+
 struct Edge{
 	int from, to, cost;
 };
 
-int V, E;	//V是有幾個點，N是有幾條邊
+int V, E;
 Edge ed[MAX_E];
 int d[MAX_V], parent[MAX_V];
 
