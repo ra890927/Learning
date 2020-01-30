@@ -21,10 +21,6 @@ edge make_edge(int from, int to, int cost){
 	return e;
 }
 
-void unite(int from, int to){
-	parent[to] = from;
-}
-
 void init(){
 	for(int i = 1; i <= V; i++)
 		parent[i] = i;
@@ -35,13 +31,19 @@ int find(int x){
 	return find(parent[x]);
 }
 
+void same(int a, int b){
+	a = find(a);
+	b = find(b);
+	
+	if(a != b) parent[a] = b;
+}
+
 void Kruskal(){
 	init();
 	sort(G, G + E);
 	
 	for(int i = 0; i < E; i++){
 		edge e = G[i];
-		if(find(e.from) != find(e.to))
-			unite(e.from, e.to);
+		same(e.from, e.to);
 	}
 }
